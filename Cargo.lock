@@ -310,6 +310,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "counter-app-basic"
+version = "0.0.0"
+dependencies = [
+ "crossterm",
+ "ratatui",
+]
+
+[[package]]
+name = "counter-app-error-handling"
+version = "0.0.0"
+dependencies = [
+ "color-eyre",
+ "crossterm",
+ "ratatui",
+]
+
+[[package]]
 name = "cpufeatures"
 version = "0.2.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
