@@ -1,14 +1,14 @@
+import partytown from "@astrojs/partytown";
 import starlight from "@astrojs/starlight";
 import tailwind from "@astrojs/tailwind";
+import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 import { defineConfig } from "astro/config";
 import emoji from "remark-emoji";
 import { remarkKroki } from "remark-kroki";
 import remarkYoutube from "remark-youtube";
 import starlightLinksValidator from "starlight-links-validator";
-import remarkIncludeCode from "/src/plugins/remark-code-import";
-import partytown from "@astrojs/partytown";
-import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-sections'
 import { collapsibleFrames } from "/src/plugins/collapsible-frames";
+import remarkIncludeCode from "/src/plugins/remark-code-import";
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,10 +44,7 @@ export default defineConfig({
         Header: "./src/components/Header.astro",
       },
       expressiveCode: {
-        plugins: [
-          pluginCollapsibleSections(),
-          collapsibleFrames(),
-        ]
+        plugins: [pluginCollapsibleSections(), collapsibleFrames()],
       },
       social: {
         github: "https://github.com/ratatui-org/ratatui",
@@ -227,7 +224,7 @@ export default defineConfig({
                   label: "Configuration Directories",
                   link: "/how-to/develop-apps/config-directories/",
                 },
-                { label: "Logging with Tracing", link: "/how-to/develop-apps/tracing/" },
+                { label: "Logging with Tracing", link: "/how-to/develop-apps/setup-logging/" },
                 {
                   label: "Terminal and Event handler",
                   link: "/how-to/develop-apps/terminal-and-event-handler/",
@@ -271,12 +268,12 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    partytown()
+    partytown(),
   ],
   vite: {
     server: {
       watch: {
-        ignored: ["**/target/**/*"]
+        ignored: ["**/target/**/*"],
       },
     },
   },
